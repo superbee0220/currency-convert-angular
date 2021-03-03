@@ -1,0 +1,26 @@
+<form class="ui fluid form">
+  <div class="field">
+    <div class="ui pointing below label">Currency</div>
+    <select
+      class="ui dropdown"
+      [value]="currentCurrency"
+      (change)="onChangeCurrency($event)"
+    >
+      <option
+        *ngFor="let info of options"
+        [value]="info.value"
+        [selected]="currentCurrency === info.value ? 'selected' : ''"
+      >
+        {{ info.text }}
+      </option>
+    </select>
+  </div>
+  <div class="field">
+    <div class="ui pointing below label">Amount</div>
+    <input
+      type="number"
+      [value]="currentAmount"
+      (input)="onChangeAmount($event)"
+    />
+  </div>
+</form>

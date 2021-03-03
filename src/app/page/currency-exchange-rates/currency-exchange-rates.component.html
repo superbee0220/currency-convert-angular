@@ -1,0 +1,27 @@
+<h3 class="ui header" style="margin-top: 2em">
+  {{
+    currencies[selectedCurrency.first.currency] +
+      " (" +
+      selectedCurrency.first.currency +
+      ")"
+  }}
+  Exchange Rates
+</h3>
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Currency</th>
+      <th>Currency Name</th>
+      <th>Exchange Rate = 1 {{ selectedCurrency.first.currency }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let info of currencies | keyvalue">
+      <td data-label="Currency">{{ info.key }}</td>
+      <td data-label="Currency Name">{{ info.value }}</td>
+      <td data-label="Exchange Rate">
+        {{ getQuote(info.key) }}
+      </td>
+    </tr>
+  </tbody>
+</table>

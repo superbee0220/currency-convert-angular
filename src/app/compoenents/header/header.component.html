@@ -1,0 +1,10 @@
+<div class="ui two pagination pointing item menu">
+  <a [ngClass]="{ active: url === '/', item: true }" routerLink="/"
+    >Currency Convert</a
+  >
+  <a
+    [ngClass]="{ active: url !== '/', item: true }"
+    routerLink="/exchange-rates"
+    >Currency Exchange Rates</a
+  >
+</div>

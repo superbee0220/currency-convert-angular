@@ -1,0 +1,20 @@
+<h3 class="ui header" style="margin-top: 2em">Currency Convert</h3>
+<div>Please enter the amount you want to convert in any field</div>
+<div class="ui segment">
+  <div class="ui two column very relaxed grid">
+    <app-inputs
+      class="column"
+      [initCurrenty]="selectedCurrency.first.currency"
+      [initAmount]="selectedCurrency.first.amount"
+      (onChangedCurrency)="onChangeFirstCurrency($event)"
+      (onChangedAmount)="onChangeFirstAmount($event)"
+    ></app-inputs>
+    <app-inputs
+      class="column"
+      [initCurrenty]="selectedCurrency.second.currency"
+      [initAmount]="selectedCurrency.second.amount"
+      (onChangedAmount)="onChangeSecondAmount($event)"
+    ></app-inputs>
+  </div>
+  <div class="ui vertical divider">&lt;=&gt;</div>
+</div>
